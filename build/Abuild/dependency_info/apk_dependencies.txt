@@ -1,0 +1,3 @@
+abuild
+qnx-packaging
+qnx-io-sock-dev
