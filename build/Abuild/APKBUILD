@@ -2,7 +2,7 @@
 # Maintainer: Ethan Leir <eleir@qnx.com>
 pkgname=sshpass
 pkgver=1.10
-pkgrel=0
+pkgrel=${pkgrel:-0}
 pkgdesc="Non-interactive SSH authentication utility"
 url="https://sourceforge.net/projects/sshpass/"
 arch="all"
@@ -27,6 +27,7 @@ package() {
 	make PREFIX=$PREFIX DESTDIR="$pkgdir" install
 }
 
+options="$options ${DISABLE_CHECK:+!check}"
 sha512sums="
 d0fbceb956baee79803fec8bd9a2e0d1e342cbc90fb8bb4baa5a01914f870393f43bd07b62aa1da208318b4971005b9bbccf0e926c590124de11a272169db81d  sshpass-1.10.tar.gz
 "
